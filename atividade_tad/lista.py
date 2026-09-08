@@ -2,11 +2,19 @@ class _No():
     def __init__(self, valor):
         self.__valor = valor
         self.__proximo = None
-    
+
     def get_valor(self):
         return self.__valor
-    
-    
+
+    def set_valor(self, valor):
+        self.__valor = valor
+
+    def get_proximo(self):
+        return self.__proximo
+
+    def set_proximo(self, proximo):
+        self.__proximo = proximo
+
 
 class lista():
     def __init__(self):
@@ -14,7 +22,7 @@ class lista():
 
     def inserir(self, valor):
         novo_no = _No(valor)
-        novo_no.__proximo = self.__inicio 
+        novo_no.set_proximo(self.__inicio)
         self.__inicio = novo_no
         #eu tive que criar uma variável "novo_no" e conctar ela a classe "no". 
         #depois instanciei a variável "novo_no" e conectei ela a variavel "__inicio" que é o inicio da lista.
@@ -28,12 +36,12 @@ class lista():
                 if anterior is None:
                     self.__inicio = atual.get_proximo()
                 else:
-                    anterior.set_proximo(atual.get_proximo())
+                        anterior.set_proximo(atual.get_proximo())
                 atual.set_proximo(None)
                 return True
-        anterior = atual
-        atual = atual.get_proximo()
-        return False
+            anterior = atual
+            atual = atual.get_proximo()
+            return False
 
     def buscar(self, valor:int) ->bool:
         atual = self.__inicio
