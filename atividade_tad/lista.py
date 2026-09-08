@@ -2,6 +2,11 @@ class _No():
     def __init__(self, valor):
         self.__valor = valor
         self.__proximo = None
+    
+    def get_valor(self):
+        return self.__valor
+    
+    
 
 class lista():
     def __init__(self):
